@@ -1,0 +1,15 @@
+.navbar {
+  background-color: black !important;
+}
+
+.activeLink {
+  font-weight: bold;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+@media (max-width: 425px) {
+  .navLogo {
+    max-width: 250px !important;
+  }
+}

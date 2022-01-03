@@ -1,0 +1,78 @@
+.article {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.slick-list .article {
+  margin: 0 15px;
+}
+
+.article:hover h1 {
+  color: var(--primary-color);
+}
+
+.articleImage {
+  width: 210px;
+  max-height: 266px;
+}
+
+.listImage {
+  overflow: hidden;
+  position: relative;
+}
+
+.authorImage {
+  border-radius: 50%;
+}
+
+.articleContent {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articleBody div {
+  color: #fff;
+}
+
+.articleTitleLink:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.articleBG {
+  height: 266px;
+}
+
+.articleOverlay {
+  background-color: var(--primary-color);
+  transform: translateY(101%);
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+}
+
+.articleOverlay h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s 0.2s ease;
+  color: #fff;
+}
+
+.article:hover .articleOverlay {
+  transform: translateY(0);
+}
+
+.article:hover .articleOverlay h2 {
+  opacity: 1;
+  transform: translateY(0px);
+}

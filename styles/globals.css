@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #41a94d;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.teko {
+  font-family: Teko, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main {
+  padding: 0 0 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-green {
+  background-color: var(--primary-color);
+}
+
+.text-green {
+  color: var(--primary-color);
+}
+
+.text-hover-green:hover {
+  color: var(--primary-color);
+}
+
+.border-green {
+  border-color: var(--primary-color);
+}
+
+.pageTitle {
+  background-image: linear-gradient(to bottom right, #000, var(--primary-color));
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pageTitle h1 {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+button {
+  background: #fff;
+  color: var(--primary-color);
+  border: 0.25rem solid var(--primary-color);
+  border-radius: 0.25rem;
+  padding: 15px;
+  margin: 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: grey;
+  border-color: grey;
+  color: white;
+  cursor: auto;
+}
+
+button:disabled::after {
+  background: grey;
+}
+
+button:disabled:hover::after {
+  transform: none;
+  transition: none;
+}
+
+button:hover {
+  color: #fff;
+}
+
+button::after {
+  content: "";
+  background: var(--primary-color);
+  position: absolute;
+  z-index: -1;
+  display: block;
+}
+
+button.grow {
+  position: relative;
+}
+
+button.grow.grow-lg {
+	height: 138px;
+}
+
+button.grow .ytVideo {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.grow::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+
+.grow:hover::after {
+  transform: skewX(-45deg) scale(1.2, 1);
+  transition: all 0.3s ease-out;
+}
+
+.slick-list button.grow {
+  width: -webkit-fill-available;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slider {
+  margin-bottom: 60px;
+}
+
+.slick-list .article {
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
+.megaBtn {
+  color: #fff;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  border: 1px solid #fff;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.megaBtn:hover {
+  font-size: 15px;
+  padding: 15px 24px;
+}
+
+.btn:disabled {
+  cursor: auto;
+  background-color: grey;
+}
+
+.btn:disabled:hover {
+  font-weight: normal;
+}
+
+div[aria-label="Countdown timer"] {
+  margin: auto;
+}
+
+.full-width {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 99.3vw;
+}
+
+@media (max-width: 425px) {
+  .bm-burger-button {
+    top: 29px !important;
+  }
+}
