@@ -4,7 +4,7 @@ import Moment from "react-moment"
 import articleStyles from "../styles/Article.module.css"
 import NextImage from "./Image"
 
-const Article = ({ article, articles, page, numberOfArticles }) => {
+const Article = ({ article }) => {
   return (
     <div className={`flex flex-col self-start`}>
       <Link href={`/blog/${article.slug}`}>
