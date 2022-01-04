@@ -56,6 +56,7 @@ const Nav = ({ global, numberOfArticles, numberOfTips, numberOfWorkouts }) => {
       display: "block",
       fontSize: "20px",
       marginBottom: "0.8rem",
+			width: "max-content",
     },
     bmOverlay: {
       top: "0",
@@ -132,7 +133,7 @@ const Nav = ({ global, numberOfArticles, numberOfTips, numberOfWorkouts }) => {
               </Link>
             )}
 
-            {numberOfWorkouts.length > 0 && (
+            {numberOfWorkouts > 0 && (
               <Link href="/workouts">
                 <a className={`block mt-4 lg:inline-block lg:mt-0 text-white mr-8 uppercase w-max ${router.pathname == "/workouts" ? navStyles.activeLink : ""}`} onClick={toggleMenu}>
                   Workouts
@@ -152,7 +153,7 @@ const Nav = ({ global, numberOfArticles, numberOfTips, numberOfWorkouts }) => {
             {/* <a className={`block mt-4 lg:inline-block lg:mt-0 text-white mr-8 uppercase w-max ${router.pathname == "/recipes" ? navStyles.activeLink : ""}`} onClick={toggleMenu}>Recipes</a> */}
             {/* </Link> */}
             <div>
-              <button href="#" className=" m-0 inline-block mt-4 lg:mt-0 megaBtn uppercase" onClick={sendEmail}>
+              <button href="#" className="m-0 inline-block mt-4 lg:mt-0 megaBtn hover:none uppercase" onClick={sendEmail}>
                 Contact
               </button>
             </div>

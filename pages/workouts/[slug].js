@@ -51,9 +51,9 @@ const Workout = ({ workout }) => {
       <div className="flex flex-col">
         <div className="my-12">
           {workout.Exercise.map((exercise) => (
-            <div className="mx-4 exercise flex items-center" key={exercise.id}>
+            <div className="m-4 exercise flex items-center" key={exercise.id}>
               {/* <MdOutlineCheckBoxOutlineBlank /> */}
-              <span className="font-bold">{`${exercise.name} - `}</span>
+              <span className="font-bold exerciseName">{`${exercise.name} - `}</span>
               <span>{`${exercise.duration} seconds`}</span>
             </div>
           ))}

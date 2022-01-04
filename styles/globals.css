@@ -119,10 +119,11 @@ button::after {
 
 button.grow {
   position: relative;
+  height: auto;
 }
 
 button.grow.grow-lg {
-	height: 138px;
+  height: 138px;
 }
 
 button.grow .ytVideo {
@@ -175,9 +176,11 @@ button.grow .ytVideo {
   transition: all 0.2s ease;
 }
 
-.megaBtn:hover {
-  font-size: 15px;
-  padding: 15px 24px;
+@media (min-width: 1024px) {
+  .megaBtn:hover {
+    font-size: 15px;
+    padding: 15px 24px;
+  }
 }
 
 .btn:disabled {
@@ -201,6 +204,17 @@ div[aria-label="Countdown timer"] {
   position: relative;
   right: 50%;
   width: 99.3vw;
+}
+
+.exerciseName {
+  width: 300px;
+  margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+	.exerciseName {
+		width: 200px;
+	}
 }
 
 @media (max-width: 425px) {
