@@ -4,8 +4,8 @@ export function getStrapiMedia(media) {
   }
 
   // Return the full URL if the media is hosted on an external provider
-  if (media.url.startsWith("http") || media.url.startsWith("//")) {
-    return url
+  if (media.url.startsWith("https") || media.url.startsWith("http") || media.url.startsWith("//")) {
+    return media.url
   }
 
   // Otherwise prepend the URL path with the Strapi URL
