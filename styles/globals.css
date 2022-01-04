@@ -176,6 +176,10 @@ button.grow .ytVideo {
   transition: all 0.2s ease;
 }
 
+.megaBtn:focus {
+	outline: none !important;
+}
+
 @media (min-width: 1024px) {
   .megaBtn:hover {
     font-size: 15px;
