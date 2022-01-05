@@ -148,6 +148,7 @@ button.grow .ytVideo {
 
 .slick-list button.grow {
   width: -webkit-fill-available;
+	margin: 1rem;
 }
 
 .slick-prev:before,

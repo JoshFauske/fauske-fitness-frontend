@@ -27,7 +27,7 @@ const workouts = ({ metadata, hero, workouts, numberOfWorkouts, page, firstWorko
         <div>
           <div className="grid grid-cols-1 gap-4 items-center md:grid-cols-2 lg:grid-cols-3">
             <div className="lg:col-span-3 md:col-span-2 col-span-1 mb-10">
-              <div className="text-2xl font-bold text-center">Latest workout</div>
+              <div className="text-2xl font-bold text-center mb-4">Latest workout</div>
               <Workout key={firstWorkout.id} workout={firstWorkout} />
             </div>
             {workouts.map((workout, i) => {
