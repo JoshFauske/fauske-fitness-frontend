@@ -15,7 +15,7 @@ const Workout = ({ workout }) => {
   return (
     <div>
       <Link href={`/workouts/${workout.Date}`}>
-        <button className="grow grow-lg w-full">
+        <button className="grow grow-lg w-full m-0">
           <Moment format="MMM Do YYYY">{workout.Date}</Moment>
           <br />
           <div>
