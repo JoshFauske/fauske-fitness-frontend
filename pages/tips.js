@@ -49,10 +49,10 @@ const tips = ({ metadata, hero, page, numberOfTips, tips, firstTip }) => {
 }
 
 export async function getServerSideProps({ query: { page = 1 } }) {
-  const start = +page === 1 ? 1 : (+page - 1) * 30
+  const start = +page === 1 ? 1 : +page - 1 + 1 * 30
   const numberOfTips = await fetchAPI(`/fitness-tips/count`)
   const firstTip = await fetchAPI(`/fitness-tips?_sort=published_at:DESC&_limit=1`)
-  const tips = await fetchAPI(`/fitness-tips?_sort=published_at:DESC&_limit=30&_start=${start}`)
+  const tips = await fetchAPI(`/fitness-tips?_sort=published_at:DESC&_start=${start}&_limit=30`)
   const { metadata, hero } = await fetchAPI("/tips-page")
 
   return {

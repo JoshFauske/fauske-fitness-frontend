@@ -6,6 +6,7 @@ import { DefaultSeo } from "next-seo"
 import App from "next/app"
 import ErrorPage from "next/error"
 import Head from "next/head"
+import { useEffect, useState } from "react"
 
 function MyApp({ Component, pageProps }) {
   const { global, numberOfArticles, numberOfTips, numberOfWorkouts } = pageProps
@@ -13,7 +14,27 @@ function MyApp({ Component, pageProps }) {
     return <ErrorPage statusCode={404} />
   }
   const { metadata } = global
+	const [currentCount, setCount] = useState(1);
 
+	useEffect(() => {
+		const keepAwake = async () => {
+			try {
+				await fetchAPI('/articles/count')
+			} catch (error) {
+				throw error;
+			}
+		};
+		if (currentCount <= 0) {
+			return;
+		} else {
+			keepAwake();
+		}
+	 
+		const id = setInterval(timer, 300000); // every 5 minutes (300000)
+		return () => clearInterval(id);
+	 }, [currentCount]);
+	 
+	 const timer = () => setCount(currentCount + 1);
   return (
     <>
       {/* Favicon */}
@@ -52,6 +73,7 @@ MyApp.getInitialProps = async (ctx) => {
   const appProps = await App.getInitialProps(ctx)
   // Fetch global site settings from Strapi
   const global = await fetchAPI("/global")
+
   const numberOfArticles = await fetchAPI(`/articles/count`)
   const numberOfTips = await fetchAPI(`/fitness-tips/count`)
   const numberOfWorkouts = await fetchAPI(`/workouts/count`)
